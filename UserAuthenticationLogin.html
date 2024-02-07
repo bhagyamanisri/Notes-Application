@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:#004753; /* White background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        .form-container {
+            background-color: #f9f9f9; /* Light gray background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+    
+        h2 {
+            color: #333; /* Dark gray text color */
+        }
+    
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555; /* Medium gray text color */
+        }
+    
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid black; /* Black border */
+            border-radius: 4px;
+            background-color: #f5f5f5; /* Off-white background color */
+            color: black; /* Black text color */
+            transition: border-color 0.3s;
+        }
+    
+        input:focus {
+            outline: none;
+            border-color: black; /* Black border on focus */
+        }
+    
+        .login-button {
+            background-color: #33a1ff; /* Electric blue button color */
+            color: #fff;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .login-button:hover {
+            background-color: #0077cc; /* Darker electric blue button color on hover */
+        }
+    </style>    
+</head>
+<body>
+
+    <div class="form-container" id="loginForm">
+        <h2>Login</h2>
+
+        <div class="input-group">
+            <label for="loginUsername">Email:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required>
+        </div>
+
+        <div class="input-group">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+        </div>
+
+        <button class="button login-button" onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            var loginUsername = document.getElementById("loginUsername").value;
+            var loginPassword = document.getElementById("loginPassword").value;
+
+            var storedUserData = localStorage.getItem("userData");
+
+            if (storedUserData) {
+                var userData = JSON.parse(storedUserData);
+
+                if (userData.email === loginUsername && userData.password === loginPassword) {
+                    alert("Login successful! Redirecting to the dashboard.");
+                    window.location.href = "NoteCreation&Organization.html";
+                } else {
+                    alert("Invalid login credentials. Please try again.");
+                }
+            } else {
+                alert("No user registered. Please register first.");
+            }
+        }
+    </script>
+
+</body>
+</html>

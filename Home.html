@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Change justify-content to flex-start */
+            align-items: center;
+            background-color: #f4f4f4;
+            background-image: url('https://png.pngtree.com/background/20210715/original/pngtree-abstract-sticky-note-mokeup-with-plant-shadow-background-picture-image_1271371.jpg'); /* Add your background image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            margin-top: 20px; 
+            margin-right: -40px; 
+        }
+
+        .button-container {
+            position: absolute;
+            top: 20px; /* Adjust top position */
+            right: 20px;
+            text-align: right;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Notes Application</h1>
+
+    <div class="button-container">
+        <a href="UserAuthenticationLogin.html" class="button">Login</a>
+        <a href="UserAuthenticationRegister.html" class="button">Register</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style> 
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color:#36454F
+                ; /* Beige background color */
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+        
+            .form-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+        
+            h2 {
+                color: #6b544d; /* Dark brown text color */
+            }
+        
+            .input-group {
+                margin-bottom: 15px;
+                text-align: left;
+            }
+        
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: #6b544d; /* Dark brown text color */
+            }
+        
+            input {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 2px solid #6b544d; /* Dark brown border */
+                border-radius: 4px;
+                background-color: #f9f5f2; /* Light beige background color */
+                color: #333; /* Text color */
+                transition: border-color 0.3s;
+            }
+        
+            input:focus {
+                outline: none;
+                border-color: #8e6b60; /* Darker brown border on focus */
+            }
+        
+            .register-button {
+                background-color: #8e6b60; 
+                color: #fff;
+                padding: 12px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+        
+            .register-button:hover {
+                background-color: #6b544d; 
+            } 
+    </style>
+</head>
+<body>
+
+    <div class="form-container" id="registrationForm">
+        <h2>Register</h2>
+
+        <div class="input-group">
+            <label for="regUsername">Username:</label>
+            <input type="text" id="regUsername" name="regUsername" required>
+        </div>
+
+        <div class="input-group">
+            <label for="regEmail">Email:</label>
+            <input type="email" id="regEmail" name="regEmail" required>
+        </div>
+
+        <div class="input-group">
+            <label for="regPassword">Password:</label>
+            <input type="password" id="regPassword" name="regPassword" required>
+        </div>
+
+        <button class="button register-button" onclick="register()">Register</button>
+    </div>
+
+    <script>
+        function register() {
+            var regUsername = document.getElementById("regUsername").value;
+            var regEmail = document.getElementById("regEmail").value;
+            var regPassword = document.getElementById("regPassword").value;
+
+            var userData = {
+                username: regUsername,
+                email: regEmail,
+                password: regPassword
+            };
+
+            localStorage.setItem("userData", JSON.stringify(userData));
+
+            alert("Registration successful!");
+            window.location.href = "UserAuthenticationLogin.html";
+        }
+    </script>
+
+</body>
+</html>
